@@ -7,18 +7,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return '<a href="/on_button">on</a><br><a href="/off_button">off</a>'
+    return '<a href="/on_button">on</a><br><a href="/off_button">off</a><br><a href="/on" onclick="return false;">on</a>'
 
 
 @app.route('/on_button')
 def on_button():
-    res = requests.get('/on')
+    res = requests.get('http://192.168.1.40:5000/on')
     return redirect("/")
 
 
 @app.route('/off_button')
 def off_button():
-    res = requests.get('/off')
+    res = requests.get('http://192.168.1.40:5000/off')
     return redirect("/")
 
 
