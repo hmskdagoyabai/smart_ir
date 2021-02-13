@@ -25,6 +25,21 @@
     ></script>
   </head>
   <body>
+    <h1>room light</h1>
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg"
+      onClick="send_get('http://192.168.1.40:5000/on');"
+    >
+      on
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg"
+      onClick="send_get('http://192.168.1.40:5000/off');"
+    >
+      off</button
+    ><br />
     <a href="#" onClick="send_get('http://192.168.1.40:5000/on');">on</a><br />
     <a href="#" onClick="send_get('http://192.168.1.40:5000/off');">off</a
     ><br />
