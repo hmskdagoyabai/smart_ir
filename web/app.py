@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return '<a href="/on_button">on</a><br><a href="/off_button">off</a><br><a href="/on" onclick="return false;">on</a>'
+    # return '<a href="/on_button">on</a><br><a href="/off_button">off</a><br><a href="/on" onclick="return false;">on</a>'
+    return render_template('index.html')
 
 
 @app.route('/on_button')
