@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "Hello World"
+    return '<a href="/on">on</a><br><a href="/off">off</a>'
 
 
 @app.route('/on')
@@ -22,7 +22,7 @@ def off():
 def send_ir(name):
     command = ['python', 'irrp.py', '-p', '-g27',
                '-f', './config/val/val.json', name]
-    res = subprocess.run(command)
+    res = subprocess.call(command)
     if res:
         return "{'status':False}"
     else:
@@ -30,4 +30,4 @@ def send_ir(name):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')
