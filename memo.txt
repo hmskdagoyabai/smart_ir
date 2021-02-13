@@ -1,0 +1,7 @@
+IR送信 27PIN
+IR受信 4PIN
+スイッチ（プルアップ） 5PIN
+
+
+ピンの状態
+$  gpio readall
