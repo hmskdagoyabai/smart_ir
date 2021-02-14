@@ -25,20 +25,34 @@
     ></script>
   </head>
   <body>
-    <h1>room light</h1>
+    <h1>hama pi</h1>
     <button
       type="button"
       class="btn btn-secondary btn-lg"
-      onClick="send_get('http://192.168.1.40:5000/on')"
+      onClick="send_get('http://192.168.1.40:5000/send/light:on')"
     >
-      on
+      電気on
     </button>
     <button
       type="button"
       class="btn btn-secondary btn-lg"
-      onClick="send_get('http://192.168.1.40:5000/off');"
+      onClick="send_get('http://192.168.1.40:5000/send/light:off');"
     >
-      off</button
+      電気off</button
+    ><br />
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg"
+      onClick="send_get('http://192.168.1.40:5000/send/danbo:on');"
+    >
+      暖房on</button
+    ><br />
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg"
+      onClick="send_get('http://192.168.1.40:5000/send/danbo:off');"
+    >
+      暖房off</button
     ><br />
     <a href="#" onClick="send_get('http://192.168.1.40:5000/on');">on</a><br />
     <a href="#" onClick="send_get('http://192.168.1.40:5000/off');">off</a
