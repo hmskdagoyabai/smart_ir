@@ -11,18 +11,6 @@ def hello():
     return render_template('index.html')
 
 
-@app.route('/on_button')
-def on_button():
-    res = requests.get('http://192.168.1.40:5000/on')
-    return redirect("/")
-
-
-@app.route('/off_button')
-def off_button():
-    res = requests.get('http://192.168.1.40:5000/off')
-    return redirect("/")
-
-
 @app.route('/on')
 def on():
     res = send_ir('light:on')
@@ -39,6 +27,19 @@ def off():
         return jsonify({'status': False})
     else:
         return jsonify({'status': True})
+
+
+@app.route("/send/<name>")
+def archive(name=""):
+    if name == "":
+        return jsonify({'status': False})
+    else:
+        res = send_ir(name)
+
+        if res:
+            return jsonify({'status': False})
+        else:
+            return jsonify({'status': True})
 
 
 def send_ir(name):

@@ -3,6 +3,7 @@
 ## pigpioのインストール
 
 ``` 
+
 $ sudo apt update
 $ sudo apt upgrade
 $ sudo apt install pigpio python3-pigpio
@@ -13,6 +14,7 @@ $ sudo systemctl start pigpiod             # いますぐ pigpiod を起動
 ## GPIOの設定
 
 ``` 
+
 $ echo 'm 27 w   w 27 0   m 4 r   pud 4 u   m 5 r   pud 5 u' > /dev/pigpio
 
 $ crontab -e
@@ -24,3 +26,5 @@ $ crontab -e
 
 flask
 requests
+
+https://korintje.com/archives/28
