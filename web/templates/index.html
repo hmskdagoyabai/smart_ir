@@ -26,35 +26,86 @@
   </head>
   <body>
     <h1>hama pi</h1>
-    <button
-      type="button"
-      class="btn btn-secondary btn-lg"
-      onClick="send_get('http://192.168.1.40:5000/send/light:on')"
+
+    <div
+      style="
+        display: flex;
+
+        /* Put a card in the next row when previous cards take all width */
+        flex-wrap: wrap;
+      "
     >
-      電気on
-    </button>
-    <button
-      type="button"
-      class="btn btn-secondary btn-lg"
-      onClick="send_get('http://192.168.1.40:5000/send/light:off');"
-    >
-      電気off</button
-    ><br />
-    <button
-      type="button"
-      class="btn btn-secondary btn-lg"
-      onClick="send_get('http://192.168.1.40:5000/send/danbo:on');"
-    >
-      暖房on</button
-    ><br />
-    <button
-      type="button"
-      class="btn btn-secondary btn-lg"
-      onClick="send_get('http://192.168.1.40:5000/send/danbo:off');"
-    >
-      暖房off
-    </button>
-    <br />
+      <!-- A card with given width -->
+      <div
+        style="
+          /* There will be 4 cards per row */
+          flex-basis: 25%;
+
+          padding-left: 8px;
+          padding-right: 8px;
+        "
+      >
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg"
+          onClick="send_get('http://192.168.1.40:5000/send/light:on')"
+        >
+          電気on
+        </button>
+      </div>
+
+      <div
+        style="
+          /* There will be 4 cards per row */
+          flex-basis: 25%;
+
+          padding-left: 8px;
+          padding-right: 8px;
+        "
+      >
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg"
+          onClick="send_get('http://192.168.1.40:5000/send/light:off');"
+        >
+          電気off
+        </button>
+      </div>
+      <div
+        style="
+          /* There will be 4 cards per row */
+          flex-basis: 25%;
+
+          padding-left: 8px;
+          padding-right: 8px;
+        "
+      >
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg"
+          onClick="send_get('http://192.168.1.40:5000/send/danbo:on');"
+        >
+          暖房on
+        </button>
+      </div>
+      <div
+        style="
+          /* There will be 4 cards per row */
+          flex-basis: 25%;
+
+          padding-left: 8px;
+          padding-right: 8px;
+        "
+      >
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg"
+          onClick="send_get('http://192.168.1.40:5000/send/danbo:off');"
+        >
+          暖房off
+        </button>
+      </div>
+    </div>
   </body>
 </html>
 
