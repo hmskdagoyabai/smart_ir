@@ -67,7 +67,8 @@ def get_names():
     with open(json_path, "r") as f:
         records = json.load(f)
     keys = records.keys()
-    return keys.reverse()
+    keys.reverse()
+    return keys
 
 
 if __name__ == "__main__":
