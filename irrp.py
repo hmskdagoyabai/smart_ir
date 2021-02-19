@@ -432,7 +432,7 @@ if args.record:  # Record.
     backup(FILE)
 
     f = open(FILE, "w")
-    f.write(json.dumps(records, sort_keys=True).replace("],", "],\n")+"\n")
+    f.write(json.dumps(records).replace("],", "],\n")+"\n")
     f.close()
 
 else:  # Playback.
