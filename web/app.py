@@ -49,7 +49,10 @@ def archive(name=""):
 @app.route("/names")
 def names():
     names = get_names()
-    return jsonify({"names": names})
+    ret = []
+    for name in names:
+        ret.append({'name': name})
+    return jsonify(ret)
 
 
 def send_ir(name):
