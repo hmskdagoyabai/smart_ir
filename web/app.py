@@ -11,8 +11,9 @@ json_path = "./config/val/val.json"
 
 @app.route('/')
 def hello():
+    names = get_names()
     # return '<a href="/on_button">on</a><br><a href="/off_button">off</a><br><a href="/on" onclick="return false;">on</a>'
-    return render_template('index.html')
+    return render_template('index.html', names=names)
 
 
 @app.route('/on')
@@ -66,7 +67,7 @@ def get_names():
     with open(json_path, "r") as f:
         records = json.load(f)
     keys = records.keys()
-    return keys
+    return keys.reverse()
 
 
 if __name__ == "__main__":

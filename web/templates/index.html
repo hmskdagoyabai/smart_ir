@@ -36,6 +36,8 @@
       "
     >
       <!-- A card with given width -->
+
+      {% for name in names %}
       <div
         style="
           /* There will be 4 cards per row */
@@ -48,63 +50,12 @@
         <button
           type="button"
           class="btn btn-secondary btn-lg"
-          onClick="send_get('http://192.168.1.40:5000/send/light:on')"
+          onClick="send_get('http://192.168.1.40:5000/send/{{name}}')"
         >
-          電気on
+          {{name}}
         </button>
       </div>
-
-      <div
-        style="
-          /* There will be 4 cards per row */
-          flex-basis: 25%;
-
-          padding-left: 8px;
-          padding-right: 8px;
-        "
-      >
-        <button
-          type="button"
-          class="btn btn-secondary btn-lg"
-          onClick="send_get('http://192.168.1.40:5000/send/light:off');"
-        >
-          電気off
-        </button>
-      </div>
-      <div
-        style="
-          /* There will be 4 cards per row */
-          flex-basis: 25%;
-
-          padding-left: 8px;
-          padding-right: 8px;
-        "
-      >
-        <button
-          type="button"
-          class="btn btn-secondary btn-lg"
-          onClick="send_get('http://192.168.1.40:5000/send/danbo:on');"
-        >
-          暖房on
-        </button>
-      </div>
-      <div
-        style="
-          /* There will be 4 cards per row */
-          flex-basis: 25%;
-
-          padding-left: 8px;
-          padding-right: 8px;
-        "
-      >
-        <button
-          type="button"
-          class="btn btn-secondary btn-lg"
-          onClick="send_get('http://192.168.1.40:5000/send/danbo:off');"
-        >
-          暖房off
-        </button>
-      </div>
+      {% endfor %}
     </div>
   </body>
 </html>
