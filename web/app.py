@@ -1,8 +1,12 @@
 
+import json
+import argparse
 from flask import Flask, jsonify, redirect, render_template
 import subprocess
 import requests
 app = Flask(__name__)
+
+json_path = "./config/val/val.json"
 
 
 @app.route('/')
@@ -42,11 +46,24 @@ def archive(name=""):
             return jsonify({'status': True})
 
 
+@app.route("/names")
+def names():
+    names = get_names()
+    return jsonify({"names": names})
+
+
 def send_ir(name):
     command = ['python', 'irrp.py', '-p', '-g27',
-               '-f', './config/val/val.json', name]
+               '-f', json_path, name]
     res = subprocess.call(command)
     return res
+
+
+def get_names():
+    with open(json_path, "r") as f:
+        records = json.load(f)
+    keys = records.keys()
+    return keys
 
 
 if __name__ == "__main__":
