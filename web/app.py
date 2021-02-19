@@ -66,7 +66,7 @@ def send_ir(name):
 def get_names():
     with open(json_path, "r") as f:
         records = json.load(f)
-    keys = records.keys()
+    keys = list(records.keys())
     keys.reverse()
     return keys
 
